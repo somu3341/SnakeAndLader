@@ -33,11 +33,8 @@ namespace SnakeAndLader
                         break;
                 }
                 Console.WriteLine("Player position  " + PlayerPosition);
-            }
-            if (this.PlayerPosition == WINNING_POSITION)
-            {
-                Console.WriteLine("Player position  " + PlayerPosition);
-            }        
+            }      
+                Console.WriteLine("Player position  " + PlayerPosition);                   
         }
     }
 }
