@@ -18,8 +18,7 @@ namespace SnakeAndLader
             int option=random.Next(0, 3);
                 switch (option)
                 {
-                    case NO_PLAY:
-                       // Console.WriteLine("Same Position");
+                    case NO_PLAY:                      
                         break;
                     case LADDER:
                         this.PlayerPosition += DieRoll();                       
@@ -33,8 +32,8 @@ namespace SnakeAndLader
                         break;
                 }
                 Console.WriteLine("Player position  " + PlayerPosition);
-            }      
-                Console.WriteLine("Player position  " + PlayerPosition);                   
+            }         
+                Console.WriteLine("Player position  " + PlayerPosition);                         
         }
     }
 }
