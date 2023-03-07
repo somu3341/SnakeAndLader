@@ -3,7 +3,7 @@ namespace SnakeAndLader
 {
     public class Play
     {
-        const int NO_PLAY = 0, LADDER = 1, SNAKE = 2;
+        const int NO_PLAY = 0, LADDER = 1, SNAKE = 2, WINNING_POSITION = 100;
         int PlayerPosition = 0;
         Random random = new Random();
         public int DieRoll()
@@ -13,22 +13,24 @@ namespace SnakeAndLader
         }
         public void GamePlay()
         {
-            int option=random.Next(0, 3);
-            switch (option)
+            while (this.PlayerPosition < WINNING_POSITION)
             {
-                case NO_PLAY:
-                    Console.WriteLine("Same Position");
-                    break;
+            int option=random.Next(0, 3);
+                switch (option)
+                {
+                    case NO_PLAY:
+                       // Console.WriteLine("Same Position");
+                        break;
                     case LADDER:
-                    this.PlayerPosition += DieRoll();
-                    Console.WriteLine("Player position  " +PlayerPosition);
-                    break;
+                        this.PlayerPosition += DieRoll();                       
+                        break;
                     case SNAKE:
-                    this.PlayerPosition -= DieRoll();
-                    Console.WriteLine("Player position  " +PlayerPosition);
-                    break;                       
+                        this.PlayerPosition -= DieRoll();                       
+                        break;
+                }
+                Console.WriteLine("Player position  " + PlayerPosition);
             }
+            Console.WriteLine("Player position  " + PlayerPosition);
         }
-
     }
 }
