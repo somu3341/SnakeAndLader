@@ -19,18 +19,21 @@ namespace SnakeAndLader
                 switch (option)
                 {
                     case NO_PLAY:
-                       // Console.WriteLine("Same Position");
                         break;
                     case LADDER:
                         this.PlayerPosition += DieRoll();                       
                         break;
                     case SNAKE:
-                        this.PlayerPosition -= DieRoll();                       
+                        int dieRoll = DieRoll();
+                        if (this.PlayerPosition - dieRoll > 0)
+                            this.PlayerPosition -= dieRoll;
+                        else
+                            this.PlayerPosition = 0;
                         break;
                 }
                 Console.WriteLine("Player position  " + PlayerPosition);
             }
-            Console.WriteLine("Player position  " + PlayerPosition);
+             Console.WriteLine("Player position  " + PlayerPosition);
         }
     }
 }
